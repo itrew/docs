@@ -1,0 +1,12 @@
+:root {
+	/* Custom variables set from https://github.com/withastro/starlight/blob/main/packages/starlight/style/props.css */
+
+	/* Key layout values */
+	--sl-sidebar-width: 20rem;
+	--sl-content-width: 52rem;
+
+	/* Text size and line height */
+	--sl-text-2xl: 1.25rem; /* 20px */
+	--sl-text-3xl: 1.5rem; /* 24px */
+	--sl-text-4xl: 1.8125rem; /* 29px */
+}
