@@ -1,0 +1,24 @@
+{
+	"name": "docs",
+	"version": "0.0.1",
+	"description": "Documentation for my personal projects.",
+	"homepage": "https://github.com/itrew/docs",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/itrew/docs"
+	},
+	"type": "module",
+	"private": "true",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/starlight": "^0.38.1",
+		"astro": "^6.0.1",
+		"sharp": "^0.34.2"
+	}
+}
