@@ -1,0 +1,59 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props {
+	/** Unique ID for the tab panel this item links to. */
+	id: string;
+	/** Mark this item as visible when the page loads. */
+	initial: boolean;
+}
+
+const { id, initial } = Astro.props;
+
+const linkAttributes: HTMLAttributes<'a'> = initial
+	? { 'data-initial': 'true', 'aria-selected': 'true' }
+	: {};
+---
+
+<li class="tab-item">
+	<a href={'#' + id} class="tab-link" {...linkAttributes}>
+		<slot />
+	</a>
+</li>
+
+<style>
+	.tab-item :global(a) {
+		border: var(--tab-switcher-border-width) solid transparent;
+		border-radius: var(--tab-item-border-radius);
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: calc(0.5rem - var(--tab-switcher-border-width));
+		background-clip: padding-box;
+		line-height: var(--sl-line-height-headings);
+		text-decoration: none;
+		color: var(--tab-switcher-text-color);
+		font-weight: 600;
+	}
+	.tab-item :global(a:hover) {
+		color: var(--tab-switcher-text-color--active);
+		background-color: var(--tab-item-background-color--hover);
+	}
+	.tab-item :global(a[aria-selected='true']) {
+		border-color: var(--tab-switcher-border-color);
+		color: var(--tab-switcher-text-color--active);
+		background-color: var(--tab-item-background-color--active);
+	}
+
+	/** Icon styling */
+	.tab-item :global(.icon) {
+		margin: 0.25rem;
+		color: var(--tab-switcher-icon-color);
+	}
+	:global(a:hover) :global(.icon) {
+		color: inherit;
+	}
+	:global(a[aria-selected='true']) :global(.icon) {
+		color: var(--tab-switcher-icon-color--active);
+	}
+</style>

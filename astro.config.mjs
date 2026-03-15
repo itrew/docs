@@ -9,17 +9,17 @@ export default defineConfig({
 			title: 'My Docs',
 			customCss: ['./src/styles/custom.css'],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/itrew/docs' }],
+			components: {
+				Sidebar: './src/components/overrides/starlight/Sidebar.astro',
+			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'Network',
+					autogenerate: { directory: 'network' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Services',
+					autogenerate: { directory: 'services' },
 				},
 			],
 		}),
