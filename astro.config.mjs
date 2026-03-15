@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'My Docs',
 			customCss: ['./src/styles/custom.css'],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/itrew/docs' }],
 			sidebar: [
 				{
 					label: 'Guides',
